@@ -45,26 +45,26 @@ Hyperface通过使用基于R-CNN的方式，用修改的AlexNet把卷积网络�
 METHOD
 -------------
 
-##### Advantages of Deep Learning for Head Pose Estimation
+### Advantages of Deep Learning for Head Pose Estimation
 deep networks 比 landmark-to-pose 好的例子：
 不依赖head model、 bla bla ..  (就是abstract里面的东东反复讲)
 
-##### The Multi-Loss Approach
+### The Multi-Loss Approach
 以前的工作都是直接对三个方向的error loss的均方值进行回归
 本文用三个不同的loss，每个主网络都与三个全连接层相连，用来预测角度* （划重点） *
 
-![](/blog/images/multi_loss.png)
+![](/blog/images/multi_loss.jpg)
 
 整体的loss函数就是交叉熵loss + 均方根loss
 
-#####  Datasets for Fine-Grained Pose Estimation
+###  Datasets for Fine-Grained Pose Estimation
 本文使用了AFLW2000 dataset
 BIWI dataset(RGB-D video) 做测试
 
-##### Training on a Synthetically Expanded Dataset
+### Training on a Synthetically Expanded Dataset
 300W-LP数据集(自然条件下的2D 特征点数据)
 
-##### The Effects of Low-Resolution
+### The Effects of Low-Resolution
 低分辨率下人脸特征点会消失，
 本文讨论了在低分辨率下简单有效的方法：通过随机下采样和上采样来增强数据集
 用模糊来增强数据集的方法也做了实验
@@ -73,18 +73,20 @@ BIWI dataset(RGB-D video) 做测试
 EXPERIMENTAL RESULTS
 -------------
 
-##### Fine-Grained Pose Estimation on the AFLW2000 and BIWI Datasets
+### Fine-Grained Pose Estimation on the AFLW2000 and BIWI Datasets
+![](/blog/images/experiments1.jpg)
+![](/blog/images/experiments2.jpg)
 ￼
-￼
-##### Landmark-To-Pose Study
-￼
+### Landmark-To-Pose Study
+![](/blog/images/experiments3.jpg)
+
 *68特征点居然有最大的错误率*
-
-￼
-￼
+![](/blog/images/experiments4.jpg)
+￼￼
 *特征点少，受抖动的影响更大*
+![](/blog/images/experiments5.jpg)
 
-##### 其他的实验不翻了，没什么干货
+### 其他的实验不翻了，没什么干货
 
 
 CONCLUSIONS AND FUTURE WORK
