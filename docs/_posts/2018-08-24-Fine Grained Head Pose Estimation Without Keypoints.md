@@ -74,17 +74,17 @@ EXPERIMENTAL RESULTS
 -------------
 
 ### Fine-Grained Pose Estimation on the AFLW2000 and BIWI Datasets
-![](/blog/images/experiments1.jpg)
-![](/blog/images/experiments2.jpg)
+![](/blog/images/experiment1.jpg)
+![](/blog/images/experiment2.jpg)
 ￼
 ### Landmark-To-Pose Study
-![](/blog/images/experiments3.jpg)
+![](/blog/images/experiment3.jpg)
 
 *68特征点居然有最大的错误率*
-![](/blog/images/experiments4.jpg)
+![](/blog/images/experiment4.jpg)
 ￼￼
 *特征点少，受抖动的影响更大*
-![](/blog/images/experiments5.jpg)
+![](/blog/images/experiment5.jpg)
 
 ### 其他的实验不翻了，没什么干货
 
