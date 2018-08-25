@@ -53,7 +53,7 @@ deep networks 比 landmark-to-pose 好的例子：
 以前的工作都是直接对三个方向的error loss的均方值进行回归
 本文用三个不同的loss，每个主网络都与三个全连接层相连，用来预测角度* （划重点） *
 
-![](/images/multi_loss.png)
+![](/blog/images/multi_loss.png)
 
 整体的loss函数就是交叉熵loss + 均方根loss
 
