@@ -57,7 +57,7 @@ deep networks 比 landmark-to-pose 好的例子：
 
 整体的loss函数就是交叉熵loss + 均方根loss
 
-###  Datasets for Fine-Grained Pose Estimation
+### Datasets for Fine-Grained Pose Estimation
 本文使用了AFLW2000 dataset
 BIWI dataset(RGB-D video) 做测试
 
