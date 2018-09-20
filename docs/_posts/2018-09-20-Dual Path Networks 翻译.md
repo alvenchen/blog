@@ -117,16 +117,19 @@ Experiments
 我们在MXnet上实现DPNs，用了40个K80显卡。根据【Sharing residual units through collective tensor factorization in deep neural networks】采用标准数据增强方法，使用mini-batch大小为32的SGD训练。比较深的网络如DPN-131，因为12G的显存有限，mini-batch设置为24。DPN-92和DPN-131的学习率从√0.1，DPN-98从0.4开始。每隔一定周期递减0.1倍。根据【Deep residual learning for image recognition】batch normalization layers are refined after training
 
 * ImageNet-1k dataset
+
 图片分类表现，看图说话（分别是不同模型的准确度、模型大小、训练时间等）：
 ![](/blog/images/dual_path_networks_13.jpg)
 ![](/blog/images/dual_path_networks_14.jpg)
 ![](/blog/images/dual_path_networks_15.jpg)
 
 * Place365-Standard dataset
+
 我们使用Places365-Standard dataset做场景分类任务，它是高分辨率的场景理解数据集，由365个场景总共180万图片组成。不同于物体图片，场景图片没有明确的离散物体，它需要更高层次的场景理解能力。
 
 ### Experiments on the object detection task
 物体检测任务是依据【Faster r-cnn: Towards real-time object detection with region proposal networks】在VOC 2007 trainval和VOC 2012 trainval下训练，在VOC 2007 test set下评估：
+
 ![](/blog/images/dual_path_networks_16.jpg)
 
 我们所有的实验都是以残差网络为基础的R-CNN框架，通过替换残差网络来做对比，其他部分都不变。
@@ -134,6 +137,7 @@ Experiments
 ### Experiments on the semantic segmentation task
 这个实验对DPN的密度检测性能做评估，也就是语义分割，其训练目标是对输入图像的每个像素点预测语义标签。我们使用PASCAL VOC 2012做基准数据集，使用DeepLab-ASPP-L做框架。
 下图的比较是把conv4 and conv5的3*3卷积层用atrous convolution替换的，并且在最后的conv5的特征表中插入了一系列Atrous Spatial Pyramid Pooling (ASPP)
+
 ![](/blog/images/dual_path_networks_17.jpg)
 
 
