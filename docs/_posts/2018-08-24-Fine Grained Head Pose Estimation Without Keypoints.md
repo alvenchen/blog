@@ -80,10 +80,10 @@ EXPERIMENTAL RESULTS
 ### Landmark-To-Pose Study
 ![](/blog/images/experiment3.jpg)
 
-*68特征点居然有最大的错误率*
+* 68特征点居然有最大的错误率
 ![](/blog/images/experiment4.jpg)
 ￼￼
-*特征点少，受抖动的影响更大*
+* 特征点少，受抖动的影响更大
 ![](/blog/images/experiment5.jpg)
 
 ### 其他的实验不翻了，没什么干货

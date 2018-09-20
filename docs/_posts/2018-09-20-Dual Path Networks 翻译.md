@@ -90,7 +90,7 @@ Dual Path Networks
 基于上面的分析，提出了简单的双路径结构，它通过共享所有blocks的𝑓()，可以低冗余重用共同特征，并且保持densely connected path来使网络在学习新特征时更加灵活。表达式如下：
 ![](/blog/images/dual_path_networks_9.jpg)
 
-其中(5)表示DenseNet，(6)表示残差网络，(7)表示dual path，(8)是加上了最后一层转换函数g()
+其中(5)表示DenseNet，(6)表示残差网络，(7)表示dual path，(8)是加上了最后一层转换函数g()，
 DPN网络图如下：
 ![](/blog/images/dual_path_networks_10.jpg)
 
@@ -98,7 +98,7 @@ DPN网络图如下：
 
 ### Dual Path Networks
 本文使用的DNP结构如上图所示，每一个micro-block被设计成bottleneck style【Deep residual learning for image recognition】，
-它以1*1的卷积层开始，中间是3*3，最后以1*1结束。输出层的1*1卷积分成两部分：第一部分是以逐个元素(element-wisely)的方式加入卷积路径，第二部分和稠密连接路径相连。为了增加每个micro-block的学习能力，我们像ResNeXt一样在第二层使用了组合的卷积层。
+它以1x1的卷积层开始，中间是3x3，最后以1x1结束。输出层的1x1卷积分成两部分：第一部分是以逐个元素(element-wisely)的方式加入卷积路径，第二部分和稠密连接路径相连。为了增加每个micro-block的学习能力，我们像ResNeXt一样在第二层使用了组合的卷积层。
 
 考虑到卷积网络比稠密连接网络更常用，我们选择了卷积网络作为主干，然后添加了稀疏的稠密连接路径来建立DPN。这种设计也减少了稠密连接路径的宽度增长和GPU内存的消耗。下图展示了详细的结构设置：
 ![](/blog/images/dual_path_networks_11.jpg)
@@ -111,18 +111,18 @@ DPN网络图如下：
 Experiments
 -------------
 
-为了评估DPN，做了大量的实验。具体来说有三类：图片分类、物体检测、语义分割。用了三个对应的基准数据集：the ImageNet-1k dataset, Places365- Standard dataset and the PASCAL VOC datasets
+为了评估DPN，做了大量的实验。具体来说有三类：图片分类、物体检测、语义分割。用了三个对应的基准数据集：the ImageNet-1k dataset, Places365-Standard dataset 和 the PASCAL VOC datasets
 
 ### Experiments on image classification task
 我们在MXnet上实现DPNs，用了40个K80显卡。根据【Sharing residual units through collective tensor factorization in deep neural networks】采用标准数据增强方法，使用mini-batch大小为32的SGD训练。比较深的网络如DPN-131，因为12G的显存有限，mini-batch设置为24。DPN-92和DPN-131的学习率从√0.1，DPN-98从0.4开始。每隔一定周期递减0.1倍。根据【Deep residual learning for image recognition】batch normalization layers are refined after training
 
-*ImageNet-1k dataset*
-image classification performance看图说话（分别是不同模型的准确度、模型大小、训练时间等）：
+* ImageNet-1k dataset
+图片分类表现，看图说话（分别是不同模型的准确度、模型大小、训练时间等）：
 ![](/blog/images/dual_path_networks_13.jpg)
 ![](/blog/images/dual_path_networks_14.jpg)
 ![](/blog/images/dual_path_networks_15.jpg)
 
-*Place365-Standard dataset*
+* Place365-Standard dataset
 我们使用Places365-Standard dataset做场景分类任务，它是高分辨率的场景理解数据集，由365个场景总共180万图片组成。不同于物体图片，场景图片没有明确的离散物体，它需要更高层次的场景理解能力。
 
 ### Experiments on the object detection task
