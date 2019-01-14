@@ -16,8 +16,8 @@ theme: # leave it empty
 # social
 author: "Chaos"
 image: /thumbnail-jumbo.png
-twitter:
-  username: chaos
+#twitter:
+#  username: chaos
 #  site:
 #facebook:
   #publisher: 1592372034171500
@@ -25,3 +25,13 @@ twitter:
   #app_id: 1798910940422432 # cayman-blog
   #authors: lorepirri
 #  admins:
+
+
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: 4d3d439e0432b242545c                            #生成的clientID
+  clientSecret: 9869d25643ec0049435ce14a8a90b3da70ccd1bf    #生成的clientSecret
+  repo: alvenchen.github.io    #仓库名称
+  owner: alvenchen    #github用户名
+  admin: alvenchen
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
