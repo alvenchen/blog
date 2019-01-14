@@ -29,9 +29,9 @@ image: /thumbnail-jumbo.png
 
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 4d3d439e0432b242545c                            #生成的clientID
-  clientSecret: 9869d25643ec0049435ce14a8a90b3da70ccd1bf    #生成的clientSecret
-  repo: alvenchen.github.io/blog    #仓库名称
+  clientID: 38fe038dc8e1470fabac                            #生成的clientID
+  clientSecret: 2b0ab0ba999d334b0c49fa9019397f250a97cc0b    #生成的clientSecret
+  repo: alvenchen.github.io    #仓库名称
   owner: alvenchen    #github用户名
   admin: alvenchen
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
