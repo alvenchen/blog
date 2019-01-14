@@ -35,3 +35,10 @@ gitalk:
   owner: alvenchen    #github用户名
   admin: alvenchen
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+# baidu Analytics
+ba_track_id: '13f15273b9491a7cbe639110ad96fbbc'
+
+# Google Analytics
+ga_track_id: 'UA-132411478-1'
+ga_domain: auto
