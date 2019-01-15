@@ -7,8 +7,8 @@ Dense Human Pose Estimation In The Wild 翻译
 本文只翻译重要的内容，实验结果什么的就不翻了，要更深入的了解，最好还看下论文引用的相关文章。
 
 在理解这篇文章之前，需要了解两个重要的名词：
-UV映射(uv mapping)：把2D图像细节投影到3D表面上的映射。(UV是坐标轴,之所以叫UV，是因为XYZ都已经被坐标系用掉了)
-稠密相关(dense correspondences):在3D重建领域，从原图到目标图的重建。举个直观的例子:
+* UV映射(uv mapping)：把2D图像细节投影到3D表面上的映射。(UV是坐标轴,之所以叫UV，是因为XYZ都已经被坐标系用掉了)
+* 稠密相关(dense correspondences):在3D重建领域，从原图到目标图的重建。举个直观的例子:
 把图二按照图一的稠密相关性展开成图三:
 ![](/blog/images/dense_human_pose/1.jpg)
 
@@ -58,6 +58,7 @@ COCO-DensePose Dataset
 为了简化UV参数，把躯体和肢体分为上下、前后的相同部分。
 对于头、手掌、脚，使用SMPL model中的UV域。对于其他部分，使用多维展开的，按对匹配测量距离后的UV域，如下图：
 ![](/blog/images/dense_human_pose/3.jpg)
+
 这里要注意的是，我们对躯干的估计是假设去掉衣服后的估计。
 
 * 对每个区域采用k-means估计后粗等距的点，然后要求标记者把这些点放到相应的表面空间。
@@ -75,8 +76,8 @@ COCO-DensePose Dataset
 ![](/blog/images/dense_human_pose/4.jpg)
 
 ### Evaluation Measures 
-逐点评估
-分人体实例评估
+* 逐点评估
+* 分人体实例评估
 
 Learning Dense Human Pose Estimation
 -------------
