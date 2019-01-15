@@ -5,6 +5,31 @@ show_downloads: false
 baseurl: "/blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "https://alvenchen.github.io" # change this to the base hostname & protocol for your site
 
+github_repo: "https://github.com/alvenchen/" #
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "you only live once!"
+sidebar-avatar: /images/blog.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+RSS: false
+github_username:    alvenchen
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
 google_analytics:
 # cayman-blog date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
