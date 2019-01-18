@@ -1,5 +1,7 @@
 论文阅读 Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields 
 =============
+对应开源项目：https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation
+
 
 abstract
 -------------
@@ -65,6 +67,7 @@ F通过CNN分别产生S和L。
 
 只所以选用max，而不是average，是因为极大值能保存峰值相近时的不同:
 ![](/blog/images/realtime_multi_person_estimation/4.jpg)
+
 身体部位的候选采用非极大值抑制
 
 ### Part Affinity Fields for Part Association 
@@ -118,7 +121,7 @@ ground truth PAF是图像中所有人PAF的均值:
 
 正式来说，我们获取一组多人的身体区域的候选集Dj。这些候选集需要与同一个人的其他区域联合起来，也就是需要配对组合成肢体。我们定义变量
 ![](/blog/images/realtime_multi_person_estimation/13.jpg)
-来表示两个区域是否连接。对单个人而言，问题归纳为：有权重的二分图匹配问题。如图fig6b，其中每条边的权重都是式子10。：
+来表示两个区域是否连接。对单个人而言，问题归纳为：有权重的二分图匹配问题。如图fig6b，其中每条边的权重都是式子10：
 ![](/blog/images/realtime_multi_person_estimation/14.jpg)
 ![](/blog/images/realtime_multi_person_estimation/15.jpg)
 
@@ -144,11 +147,3 @@ Discussion
 -------------
 
 
-
-
-
--------------
-
-
-
--------------
